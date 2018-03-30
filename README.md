@@ -5,6 +5,10 @@ After cloning the repo:
   3. enter your rolls as app scores and tabulates game data
 * NOTE: game is persisted at ```localhost:8000/game/:id```
   * can close game, reload URI later and continue in-place
+  
+## running tests
+* End-to-end tests: ```python manage.py test e2e_tests/```
+* Unit tests: ```python manage.py test bowling_app/```
 
 ## note about version control
 While I normally would've used git from the start, I didn't for this project, in case the team was wanting their coding challenge to be kept private. After a public GH link was requested, I added the full app to this repo in one commit. Apologies if the expectation was to be able to step through a commit history. 
