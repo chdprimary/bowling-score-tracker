@@ -3,5 +3,4 @@ geckodriver.log
 virtual_env
 __pycache__
 *.pyc
-bowling_app/migrations
 .vscode
