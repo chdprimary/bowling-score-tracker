@@ -4,7 +4,7 @@ from bowling_app.models import Game, Frame, Roll
 import logging
 logging.basicConfig(level=logging.DEBUG, format=' * %(levelname)s - %(message)s')
 # Uncomment following line to suppress debug logging to stdout
-logging.disable(logging.DEBUG)
+# logging.disable(logging.DEBUG)
 
 def home_page(request):
     return render(request, 'home.html')
