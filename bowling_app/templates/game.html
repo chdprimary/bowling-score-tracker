@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bowling Score Tracker</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- My CSS -->
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/bowling_app.css">
+    </head>
+    <body>
+        <div id="top-group">
+            <h1>The Zebra &mdash; Bowling Score Tracker!</h1>
+            {% if game.finished is False %}
+            <p id="id_input_help_message">&nbsp;NOTE: Accepted inputs: 0-10, 'x', 'X', or '/'</p>
+            <form method="POST" action="/games/{{ game.id }}/add_roll">
+                <input id="id_new_roll" name="roll_char" placeholder=" How many pins did you knock down?"/>
+                {% csrf_token %}
+            </form>
+            <p id="id_game_score_label">Game running total score: <span id="id_game_score">{{ game.running_total_score }}</span></p>
+            {% else %}
+            <p id="id_game_score_label">GAME FINAL SCORE: <span id="id_game_score">{{ game.running_total_score }}</span></p>
+            {% endif %}
+        </div>
+        <div id="bottom-group">
+            <div class="table-container">
+                <table id="id_game_table">
+                    <thead>
+                        <td>Frame</td>
+                        <td>Roll</td>
+                        <td>Score</td>
+                    </thead>
+                    <tbody>
+                        {% for frame in game.frame_set.all %}
+                            {% for roll in frame.roll_set.all %}
+                            <tr class="dark-table-row">
+                                <td>{{ frame.frame_id_offset|add:1 }}: </td>
+                                <td>{{ forloop.counter }}: </td>
+                                <td class="roll-score">{{ roll.score }}</td>
+                            </tr>
+                            {% endfor %}
+                            <tr class="frame_score_label light-table-row">
+                                <td>Frame {{ frame.frame_id_offset|add:1 }} score: </td>
+                                <td></td>
+                                {% if frame.frame_score is -1 %}
+                                <td> - </td>
+                                {% else %}
+                                <td>{{ frame.frame_score }}</td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% if game.finished is True %}
+        <footer>
+            <p>Authored by Christian Dean</p>
+        </footer>
+        {% endif %}
+    </body>
+</html>

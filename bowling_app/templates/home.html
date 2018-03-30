@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bowling Score Tracker</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- My CSS -->
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/bowling_app.css">
+    </head>
+    <body>
+        <h1>The Zebra &mdash; Bowling Score Tracker!</h1>
+        <p id="id_input_help_message" style="font-size:0.8em;margin-bottom:0px;">&nbsp;NOTE: Accepted inputs: 0-10, 'x', 'X', or '/'</p>
+        <form method="POST" action="/games/new">
+            <input id="id_new_roll" name="roll_char" placeholder=" How many pins did you knock down?" style="width: 250px;"/>
+            {% csrf_token %}
+        </form>
+    </body>
+</html>

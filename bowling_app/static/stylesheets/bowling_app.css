@@ -1,0 +1,46 @@
+/*
+	TOP GROUP
+*/
+
+#id_input_help_message {
+	font-size:0.8em;
+	margin-bottom:0px;
+}
+
+#id_new_roll {
+	width: 250px;
+}
+
+/*
+	BOTTOM GROUP
+ */
+ 
+ .table-container {
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 margin-top: 5px;
+	 width:50%;
+ }
+ 
+ #id_game_table td {
+	 padding: 2px;
+ }
+
+ #id_game_table thead td {
+	text-align: center;
+ }
+
+.dark-table-row {
+	background-color:#444;
+	color:white;
+}
+
+.light-table-row {
+	background-color:#eee;
+	color:black;
+}
+
+td.roll-score {
+	text-align: center;
+}
