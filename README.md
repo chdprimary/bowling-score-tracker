@@ -1,8 +1,9 @@
 ## running locally
 After cloning the repo:
-  1. run ```python manage.py runserver```
-  2. navigate to ```localhost:8000```
-  3. enter your rolls as app scores and tabulates game data
+  1. run ```python manage.py migrate```
+  2. run ```python manage.py runserver```
+  3. navigate to ```localhost:8000```
+  4. enter your rolls as app scores and tabulates game data
 * NOTE: game is persisted at ```localhost:8000/game/:id```
   * can close game, reload URI later and continue in-place
   
