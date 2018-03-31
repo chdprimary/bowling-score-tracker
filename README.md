@@ -1,5 +1,5 @@
 ## dependencies
-1. Python 3
+1. Python 3.6 (project uses f-string syntax)
 2. Django 1.11
 
 To run the end-to-end tests, you'll need:
