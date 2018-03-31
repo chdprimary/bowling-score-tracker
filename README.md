@@ -1,3 +1,14 @@
+## dependencies
+1. Python 3
+2. Django 1.11
+
+To run the end-to-end tests, you'll need:
+1. Firefox
+2. [Geckodriver](https://github.com/mozilla/geckodriver/releases) (put it on system PATH)
+3. Selenium 3
+
+You can set up a virtualenv (```python -m venv virtualenv```) in the cloned repo directory, then ```cd virtualenv``` and install Django 1.11 and Selenium 3 with ```pip install "django<1.12" "selenium<4"```.
+
 ## running locally
 After cloning the repo:
   1. run ```python manage.py migrate```
