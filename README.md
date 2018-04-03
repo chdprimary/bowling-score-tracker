@@ -1,3 +1,5 @@
+See also: my bowling [REST API](https://github.com/chdprimary/bowling-rest-api), made with Flask-RESTful and MongoDB.
+
 ## dependencies
 1. Python 3.6 (project uses f-string syntax, which was introduced in 3.6)
 2. Django 1.11
